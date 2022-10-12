@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 //не видит коммон.сервис
 @SpringBootApplication
-@ComponentScan(basePackages = {"liga.medical.personservice"})
+@ComponentScan(basePackages = {"liga.medical.personservice", "liga.medical.common.service"})
 public class PersonServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(PersonServiceApplication.class, args);
