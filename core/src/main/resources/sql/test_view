@@ -1,0 +1,4 @@
+CREATE VIEW test_view AS SELECT medical.medical_card.id, medical.medical_card.comment, medical.illness.heaviness,
+                                medical.illness.appearance_dttm
+FROM medical.medical_card, medical.illness
+WHERE medical_card.id=illness.medical_card_id;

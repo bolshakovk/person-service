@@ -1,0 +1,9 @@
+create view person_repr_data as select medical.person_data.first_name,
+                                       medical.person_data.last_name,
+                                       medical.person_data.age,
+                                       medical.person_data.sex,
+                                       medical.contact.email,
+                                       medical.contact.profile_link
+                                from medical.contact, medical.person_data
+                                where medical.contact.id=medical.person_data.contact_id;
+select * from person_repr_data;
