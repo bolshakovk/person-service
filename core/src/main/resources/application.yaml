@@ -4,3 +4,12 @@ spring:
     username: postgres
     password: root
     driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        show_sql: false
+        temp:
+          use_jdbc_metadata_defaults: false
+  liquibase:
+    change-log: classpath:liquibase/changelog.yml
