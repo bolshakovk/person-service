@@ -1,26 +1,32 @@
 package liga.medical.personservice.core.controller;
 
-import liga.medical.personservice.core.model.Illness;
-import liga.medical.personservice.core.repository.IllinessRepository;
+import liga.medical.personservice.core.entity.Illness;
+import liga.medical.personservice.core.mapper.IllnessMapper;
+import liga.medical.personservice.core.service.api.IllnesService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/Illnes")
+import java.util.List;
+
+@Controller
+@RequiredArgsConstructor
+@RequestMapping("/illness")
 public class IllnessController {
-    private final IllinessRepository illinessRepository;
+    private final IllnesService illnesService;
 
-    public IllnessController(IllinessRepository illinessRepository) {
-        this.illinessRepository = illinessRepository;
-    }
-    @PostMapping
-    public Illness add(Illness illness){
-        return illinessRepository.saveAndFlush(illness);
-    }
     @GetMapping
-    public void get(){
-        illinessRepository.findAll();
+    public void getIllness(){
+        System.out.println("get");
+        illnesService.getIllness();
+    }
+
+    @PostMapping
+    public void addIllness(Illness illness){
+        System.out.println("post");
+        illnesService.addIllness(illness);
     }
 }

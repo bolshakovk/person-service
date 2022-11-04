@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:8080/postgres?=currentSchema=medical
+    url: jdbc:postgresql://localhost:8081/postgres
     username: postgres
     password: root
     driver-class-name: org.postgresql.Driver
@@ -11,5 +11,7 @@ spring:
         show_sql: false
         temp:
           use_jdbc_metadata_defaults: false
-  liquibase:
-    change-log: classpath:liquibase/changelog.yml
+  messages:
+    basename: validation
+server:
+  port: 8085

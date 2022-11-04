@@ -1,27 +1,30 @@
 package liga.medical.personservice.core.controller;
 
-import liga.medical.personservice.core.model.PersonData;
+import liga.medical.personservice.core.entity.PersonData;
 import liga.medical.personservice.core.repository.PersonDataRepository;
-import org.apache.tomcat.jni.Address;
-import org.springframework.web.bind.annotation.*;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/PersonData")
+@Controller
+@RequiredArgsConstructor
+@RequestMapping("/person_data")
 public class PersonDataController {
-
     private final PersonDataRepository personDataRepository;
 
-    public PersonDataController(PersonDataRepository personDataRepository) {
-        this.personDataRepository = personDataRepository;
-    }
     @GetMapping
-    public void get(){
-        personDataRepository.findAll();
+    public List<PersonData> getPersonData(){
+        System.out.println("getPersondata getMapping: " + personDataRepository.findAll());
+        return personDataRepository.findAll();
     }
     @PostMapping
-    public PersonData add(@RequestBody PersonData personData){
-        return personDataRepository.saveAndFlush(personData);
+    public PersonData addPersonData(@RequestBody String personData){
+        System.out.println("persondata postmapping");
+        return personDataRepository.findByName(personData);
     }
 }

@@ -1,9 +1,9 @@
 package liga.medical.personservice.core.repository;
 
-import liga.medical.personservice.core.entity.MedicalCard;
+import liga.medical.personservice.core.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MedicalCardRepository extends JpaRepository<MedicalCard, Long> {
+public interface RoleRepository extends JpaRepository<Role, Long> {
 }
