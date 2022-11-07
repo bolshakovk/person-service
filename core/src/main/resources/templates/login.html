@@ -1,18 +1,14 @@
 <!DOCTYPE html>
-<html>
-<body>
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="meta tag in the web document">
-    <meta name="keywords" content="HTML,CSS">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Логин</title>
 </head>
-<p>Branch</p>
-<form>
-    <input type="password" id="CSE" name="Branch" value="CSE" >
-    <label for="CSE">Enter password</label> <br>
-    <input type="password" name="Branch" value="IT" >
-    <label for="CSE">Re-enter password</label>
+<body>
+Логин
+<form action="/login" method="post">
+    <div><label> Username: <input type="text" name="username"/> </label></div>
+    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><input type="submit" value="Войти"/></div>
 </form>
+<a href="/registration">Регистрация</a>
 </body>
 </html>

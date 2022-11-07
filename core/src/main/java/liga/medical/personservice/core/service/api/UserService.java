@@ -6,12 +6,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 
-public interface UserService extends UserDetailsService {
+public interface UserService{
     void save(User user);
 
     User findByUsername(String username);
-
-    List<UserDto> getUsers();
-
-    boolean deleteUser(Long userId);
 }

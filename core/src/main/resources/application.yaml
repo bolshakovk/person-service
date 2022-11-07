@@ -1,4 +1,6 @@
 spring:
+  main:
+    banner-mode: log
   datasource:
     url: jdbc:postgresql://localhost:8081/postgres
     username: postgres
@@ -13,5 +15,26 @@ spring:
           use_jdbc_metadata_defaults: false
   messages:
     basename: validation
+  security:
+    user:
+      name: username
+      password: 12345678
+logging:
+  level:
+    org.springframework.jdbc.core: TRACE
+  file:
+    name: person-service.log
+  logback:
+    rollingpolicy:
+      clean-history-on-start: true
+      max-file-size: 5MB
+management:
+  endpoint:
+    loggers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "health, info, loggers"
 server:
   port: 8085
