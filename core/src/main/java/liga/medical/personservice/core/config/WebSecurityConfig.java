@@ -38,8 +38,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/illness").hasRole("ADMIN")
                 .antMatchers("/person_data").permitAll()
                 .antMatchers("welcome").permitAll()
-                .and().formLogin();
-                /*.authorizeRequests()
+                .and().formLogin();/*
+                .authorizeRequests()
                 .antMatchers("/resources/**", "/registration").permitAll()
                 .anyRequest().authenticated()
                 .and()

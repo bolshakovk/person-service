@@ -12,6 +12,7 @@ import java.util.List;
 @Table(name = "contact")
 public class Contact {
 
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
@@ -19,5 +20,9 @@ public class Contact {
   private String email;
   private String profileLink;
 
-
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(name = "contacts_adress",
+          joinColumns = {@JoinColumn(name = "adress_id")},
+          inverseJoinColumns = @JoinColumn(name = "contact_id"))
+  private List<Adress> adresses;
 }

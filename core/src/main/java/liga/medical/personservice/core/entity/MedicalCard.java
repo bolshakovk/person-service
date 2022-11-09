@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 @NoArgsConstructor
@@ -24,6 +23,6 @@ public class MedicalCard {
   @OneToOne
   private PersonData personData;
 
-  //@OneToMany
-  //private Set<Illness> illness;
+  @OneToMany
+  private Set<Illness> illness;
 }

@@ -1,12 +1,11 @@
 package liga.medical.personservice.core.repository;
 
 import liga.medical.personservice.core.entity.Contact;
-import liga.medical.personservice.core.entity.MedicalCard;
+import liga.medical.personservice.core.entity.Illness;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.Query;
 
-@Repository
-public interface MedicalCardRepository extends JpaRepository<MedicalCard, Long> {
+public interface AdressRepository extends JpaRepository<Illness, Long> {
 }

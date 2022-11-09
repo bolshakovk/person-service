@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@Controller
-@RequiredArgsConstructor
-@RequestMapping("/person_data")
+//@Controller
+//@RequiredArgsConstructor
+//@RequestMapping("/person_data")
 @Slf4j
-@Api(value = "API для работы оператора клиники")
+//@Api(value = "API для работы оператора клиники")
 public class PersonDataController {
-    private final PersonDataRepository personDataRepository;
+   /* private final PersonDataRepository personDataRepository;
 
     @GetMapping
     @ApiOperation(value ="get all person data")
@@ -33,5 +33,5 @@ public class PersonDataController {
     @ApiOperation(value ="get person data")
     public PersonData addPersonData(@RequestBody String personData){
         return personDataRepository.findByName(personData);
-    }
+    }*/
 }

@@ -1,7 +1,5 @@
 package liga.medical.personservice.core.entity;
 
-import liga.medical.personservice.core.entity.Contact;
-import liga.medical.personservice.core.entity.MedicalCard;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +11,7 @@ import java.util.List;
 @Entity
 @Table(name = "person_data")
 public class PersonData {
+
 
   @Id
   private long id;
@@ -32,6 +31,5 @@ public class PersonData {
 
   @OneToMany
   private List<Contact> contacts;
-
 
 }

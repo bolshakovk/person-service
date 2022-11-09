@@ -6,11 +6,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class ApplicationConfig {
+public class ApplicationConfig {/*
     @Bean
     public ModelMapper modelMapper(){
         ModelMapper mapper = new ModelMapper();
         mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STANDARD);
         return mapper;
-    }
+    }*/
 }

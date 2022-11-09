@@ -8,9 +8,9 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-@Component
-public class UserValidator implements Validator {
-    @Autowired
+//@Component
+public class UserValidator /*implements Validator*/ {
+  /*  @Autowired
     private UserService userService;
 
     @Override
@@ -38,5 +38,5 @@ public class UserValidator implements Validator {
         if (!user.getPasswordConfirm().equals(user.getPassword())) {
             errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm");
         }
-    }
+    }*/
 }

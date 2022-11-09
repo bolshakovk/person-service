@@ -9,9 +9,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 
-@Controller
+//@Controller
 public class UserController {
-    @Autowired
+   /* @Autowired
     private UserService userService;
 
     @Autowired
@@ -58,5 +58,5 @@ public class UserController {
     @GetMapping({"/", "/welcome"})
     public String welcome(Model model) {
         return "welcome";
-    }
+    }*/
 }

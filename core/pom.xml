@@ -16,6 +16,12 @@
 
     <dependencies>
         <dependency>
+            <!--        Эта зависимость тянет компоненты спринга их тоже нужно сканировать-->
+            <groupId>liga.medical</groupId>
+            <artifactId>common-services</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>liga.medical</groupId>
             <artifactId>person-service-utils</artifactId>
         </dependency>
@@ -28,6 +34,22 @@
             <groupId>liga.medical</groupId>
             <artifactId>person-service-migration</artifactId>
         </dependency>
+
+
+
+
+
+
+
+
+
+        <!-- https://mvnrepository.com/artifact/org.liquibase/liquibase-core -->
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>4.17.1</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -61,7 +83,7 @@
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
-            <version>1.4.2.Final</version>
+            <version>1.5.3.Final</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -84,7 +106,7 @@
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>RELEASE</version>
+            <version>23.0.0</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

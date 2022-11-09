@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+        <changeSet id="2" author="Konstantin">
+            <comment>Relations</comment>
+            <addForeignKeyConstraint baseTableName="address" baseColumnNames="contact_id" constraintName="fk_address_contact"
+                                     referencedTableName="contact"
+                                     referencedColumnNames="id"/>
+
+            <addForeignKeyConstraint baseTableName="illness" baseColumnNames="medical_card_id" constraintName="fk_illness_med_car"
+                                     referencedTableName="medical_card"
+                                     referencedColumnNames="id"/>
+
+            <addForeignKeyConstraint baseTableName="person_data" baseColumnNames="contact_id" constraintName="fk_person_data_contact"
+                                     referencedTableName="contact"
+                                     referencedColumnNames="id"/>
+
+            <addForeignKeyConstraint baseTableName="person_data" baseColumnNames="medical_card_id" constraintName="fk_person_data_med_car"
+                                     referencedTableName="medical_card"
+                                     referencedColumnNames="id"/>
+
+            <addForeignKeyConstraint baseTableName="signals" baseColumnNames="person_data_id" constraintName="fk_person_data_id"
+                                     referencedTableName="person_data"
+                                     referencedColumnNames="id"/>
+        </changeSet>
+</databaseChangeLog>

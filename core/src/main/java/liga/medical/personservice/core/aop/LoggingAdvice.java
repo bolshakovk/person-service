@@ -3,10 +3,7 @@ package liga.medical.personservice.core.aop;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import liga.medical.personservice.core.entity.PersonData;
-import liga.medical.personservice.core.entity.User;
 import liga.medical.personservice.core.repository.PersonDataRepository;
-import liga.medical.personservice.core.repository.UserRepository;
-import liga.medical.personservice.core.service.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -14,9 +11,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
-import springfox.documentation.service.OAuth;
 
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -35,16 +30,16 @@ public class LoggingAdvice {
     }
     @Around(value = "generalPointCut()")
     public Object applicationLogger(ProceedingJoinPoint proceedingJoinPoint) throws JsonProcessingException{
-        PersonData personData = personDataRepository.findByName("firstnameuser");
-        List<PersonData> personDataList = personDataRepository.findAll();
+        //PersonData personData = personDataRepository.findByName("firstnameuser");
+        //List<PersonData> personDataList = personDataRepository.findAll();
         ObjectMapper mapper = new ObjectMapper();
         String methodName = proceedingJoinPoint.getSignature().getName();
         String className = proceedingJoinPoint.getTarget().getClass().getName();
 
         log.info("invoke class : " + className + " method : " + methodName
                 + "\ndate and time : " + DateTimeFormatter.ISO_LOCAL_DATE_TIME.format(LocalDateTime.now())
-                +"\nid log: " + ++idLog
-                +"\nusername: " + personDataList);
+                +"\nid log: " + ++idLog);
+                //+"\nusername: " + personDataList);
 
         Object obj = null;
         try {

@@ -1,4 +1,7 @@
 spring:
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/master.xml
   main:
     banner-mode: log
   datasource:
@@ -10,9 +13,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQL95Dialect
-        show_sql: false
-        temp:
-          use_jdbc_metadata_defaults: false
+        ddl-auto: none
   messages:
     basename: validation
   security:
