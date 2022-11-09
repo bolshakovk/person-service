@@ -1,5 +1,6 @@
 package liga.medical.personservice.core.service;
 
+import liga.medical.personservice.core.entity.Adress;
 import liga.medical.personservice.core.entity.Contact;
 import liga.medical.personservice.core.repository.ContactRepository;
 import liga.medical.personservice.core.service.api.ContactService;

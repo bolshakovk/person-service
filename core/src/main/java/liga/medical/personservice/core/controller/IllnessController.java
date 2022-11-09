@@ -7,25 +7,24 @@ import liga.medical.personservice.core.service.api.IllnesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/*@Controller
+@Controller
 @RequiredArgsConstructor
 @RequestMapping("/illness")
-@Api(value ="illness controller")*/
+@Api(value ="illness controller")
 public class IllnessController {
-  /*  private final IllnesService illnesService;
+    private final IllnesService illnesService;
 
     @GetMapping
     @ApiOperation(value ="get illness")
     public void getIllness(){
         illnesService.getIllness();
     }
-
-    @PostMapping
-    @ApiOperation(value ="add illness")
-    public void addIllness(Illness illness){
-        illnesService.addIllness(illness);
-    }*/
+    @GetMapping("/illness/{id}")
+    @ApiOperation(value = "get by id")
+    public Illness getAddressById(@PathVariable long id) {
+        return illnesService.getIllness(id);
+    }
 }

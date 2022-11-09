@@ -1,5 +1,6 @@
 package liga.medical.personservice.core.repository;
 
+import liga.medical.personservice.core.entity.Adress;
 import liga.medical.personservice.core.entity.Contact;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
